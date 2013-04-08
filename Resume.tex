@@ -1,0 +1,225 @@
+\documentclass[9pt]{article}
+\usepackage{fullpage}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[usenames]{color}
+\usepackage{hyperref}
+
+\leftmargin=0.25in
+\oddsidemargin=0.25in
+\textwidth=6.0in
+\topmargin=-0.25in
+\textheight=9.25in
+
+\raggedright
+
+\pagenumbering{arabic}
+
+\hypersetup{hidelinks}
+
+\def\bull{\vrule height 0.8ex width .7ex depth -.1ex }
+% DEFINITIONS FOR RESUME
+
+\newenvironment{changemargin}[2]{%
+  \begin{list}{}{%
+    \setlength{\topsep}{0pt}%
+    \setlength{\leftmargin}{#1}%
+    \setlength{\rightmargin}{#2}%
+    \setlength{\listparindent}{\parindent}%
+    \setlength{\itemindent}{\parindent}%
+    \setlength{\parsep}{\parskip}%
+  }%
+  \item[]}{\end{list}
+}
+
+\newcommand{\lineover}{
+	\begin{changemargin}{-0.05in}{-0.05in}
+		\vspace*{-8pt}
+		\hrulefill \\
+		\vspace*{-2pt}
+	\end{changemargin}
+}
+
+\newcommand{\header}[1]{
+	\begin{changemargin}{-0.5in}{-0.5in}
+		\scshape{#1}\\
+  	\lineover
+	\end{changemargin}
+}
+
+\newcommand{\PageHead}[2]{
+	\begin{changemargin}{-0.5in}{-0.5in}
+		\begin{center}
+			{\Large \scshape {#1}}\\ \smallskip
+			{\Large {#2}}
+		\end{center}
+	\end{changemargin}
+}
+
+\newenvironment{body} {
+	\vspace*{-16pt}
+	\begin{changemargin}{-0.25in}{-0.5in}
+  }	
+	{\end{changemargin}
+}	
+
+\newcommand{\school}[4]{
+	\textbf{#1} \hfill \emph{#2\\}
+	#3\\ 
+	#4\\
+}
+
+% END RESUME DEFINITIONS
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Name
+\PageHead{Curriculum Vitae}{Erwin Oldenkamp}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Objective
+\header{Contact}
+
+\begin{body}
+	\vspace{14pt}
+	\begin{tabular}{l l l}
+		Naam&:&Erwin Oldenkamp \\
+		Geslacht&:&Man  \\
+		Nationaliteit&:&Nederlandse \\
+		Geboortedatum&:&21-02-1991 \\
+		Geboorteplaats&:&Assen \\
+		Burgelijke staat&:&Ongehuwd \\
+		Adres&:&Kleine leliestraat 1 \\ 
+		& & 9712TD \\ 
+   		& & Groningen \\ 
+		Telefoonnummer & : & 0627481354 \\
+		Email &:&  \href{mailto:oldenkamperwin@gmail.com}{Oldenkamperwin@gmail.com}\\
+		LinkedIn & : & \href{http://www.linkedin.com/in/erwinoldenkamp}{www.linkedin.com/in/erwinoldenkamp} \\
+		Github & : & \href{http://www.github.com/Eernie}{www.github.com/Eernie} \\
+	\end{tabular}
+\end{body}
+
+\smallskip
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Education
+\header{Opleidingen}
+\begin{body}
+	\vspace{14pt}
+	\textbf{HBO Informatica}{} \hfill \emph{2010 - heden }{} \\
+	\emph{Hanze hogeschool}, Groningen{} \\
+  \medskip
+	\textbf{MBO niveau 4 -- Applicatie Ontwikkelaar (Diploma behaald)} \hfill \emph{2009-2010} \\
+	\emph{Drenthe college}, Emmen{}\\
+  \medskip
+	\textbf{MBO niveau 3 -- Medewerker beheer ICT(Diploma behaald)} \hfill \emph{2007-2009} \\
+	\emph{Drenthe college}, Emmen{}\\
+  \medskip
+	\textbf{Kader ICT (Diploma behaald)} \hfill \emph{2003-2005} \\
+	\emph{Hondsrug college}, Emmen{}\\
+\end{body}
+
+\smallskip
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Skills
+\header{Paketkennis}
+
+\begin{body}
+	\vspace{14pt}
+	\emph{\textbf{Programming:}}{} Microsoft Office - PHP - (X)HTML - Jquery - CSS - Symfony - Java - Python - MySQL - Coffeescript - Django - Play Framework \\
+	\medskip
+	\emph{\textbf{Operating Systems:}}{} Windows, Linux, UNIX\\
+\end{body}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Experience
+\header{Werkervaring}
+
+\begin{body}
+	\vspace{14pt}
+	\textbf{Programmeur }, \emph{Learnit B.V.}, Groningen \hfill \emph{November 2011 -- heden}\\
+	\vspace*{-4pt}
+	\begin{itemize} \itemsep -0pt  % reduce space between items
+		\item Hier doe ik verschillend werk. Al het werk wat ik verricht heeft betrekking tot databases. Exports maken en mutaties regelen. Dit word voornamelijk gedaan in PHP en Python. Ook werk ik aan de website. Deze is volledig geschreven in python 
+	\end{itemize}
+
+	\textbf {Webdeveloper }, \emph{SquidMedia}, Winsum  \hfill \emph{Mei 2011 -- november 2011 }\\
+	\vspace*{-4pt}
+	\begin{itemize} \itemsep -0pt
+		\item Hier zat ik in een team van drie man. Hier heb ik gewerkt aan Joomla websites en aan websites gemaakt in hun eigen content management system, DCT.
+	\end{itemize}
+
+	\textbf {Technische dienst}, \emph{Gameshop Play-It}, Stadskanaal   \hfill \emph{Januari 2011- Mei 2011  }\\
+	\vspace*{-4pt}
+	\begin{itemize} \itemsep -0pt
+		\item Ik heb hier in de technischedienst gewerkt. Ik repareerde gameconsoles en maakte software voor het bedrijf zelf.
+	\end{itemize}
+
+	\textbf {Vulploegleider}, \emph{Plus Sandur}, Emmen  \hfill \emph{Augustus 2009-2010}\\
+	\vspace*{-4pt}
+	\begin{itemize} \itemsep -0pt
+		\item Ik moest er voor zorgen dat de vulploeg een goeie vulnorm had. Hier was ik dan ook het aanspreekpunt van de vulploeg.
+	\end{itemize}
+\end{body}
+
+\smallskip
+
+\newpage{} % uncomment this line if you want to force a new page
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Interns
+\header{Stage}
+
+\begin{body}
+	\vspace{14pt}
+	\textbf{Software Developer}, \emph{Inversive Media}, Groningen \hfill \emph{Februarie 2013 -- heden}\\
+	\vspace*{-4pt}
+	\begin{itemize} \itemsep -0pt  % reduce space between items
+		\item Voor mijn stage opdracht heb ben ik een Api aan het ontwikkelen voor adres gegevens. Deze api word data gevoerd van het BAG.
+		\item Ook werk ik hier aan de website Tafelreserveren.nl. Geschreven in het Playframework.
+	\end{itemize}
+
+	\textbf {Applicatieontwikkelaar}, \emph{aXtion}, Emmen \hfill \emph{Februarie 2010 -- juni 2010}\\
+	\vspace*{-4pt}
+	\begin{itemize} \itemsep -0pt
+		\item Hier heb ik stage gelopen voor  een half jaar. Ik heb hier veel gewerkt in PHP en het Symfony framework. Ik heb veel geleerd, vooral het samen werken in een project.
+	\end{itemize}
+
+	\textbf {Medewerker Automatisering}, \emph{Gemeentehuis}, Coevorden \hfill \emph{Februarie 2010 -- juni 2010}\\
+	\vspace*{-4pt}
+	\begin{itemize} \itemsep -0pt
+		\item Hier voerde ik vooral systeem beheer taken uit, computers vervangen en repareren.  
+	\end{itemize}
+\end{body}
+
+\smallskip
+
+% \newpage{} % uncomment this line if you want to force a new page
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% hobby's
+\header{Hobby / Vrije tijd}
+
+\begin{body}
+	\vspace{14pt}
+	\begin{itemize} \itemsep -0pt  % reduce space between items
+		\item Drummen
+		\item Muziek
+		\item Applicaties bouwen
+	\end{itemize}
+
+\end{body}
+
+\smallskip
+
+% \newpage{} % uncomment this line if you want to force a new page
+
+\smallskip
+
+
+\end{document}
