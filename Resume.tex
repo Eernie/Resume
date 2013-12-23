@@ -4,6 +4,13 @@
 \usepackage{amssymb}
 \usepackage[usenames]{color}
 \usepackage{hyperref}
+\usepackage{wrapfig}
+\usepackage{graphicx}
+\usepackage{float} 
+\usepackage[export]{adjustbox}
+\usepackage{titlesec}
+\usepackage{titling}
+\usepackage{fontspec}
 
 \leftmargin=0.25in
 \oddsidemargin=0.25in
@@ -16,6 +23,9 @@
 \pagenumbering{arabic}
 
 \hypersetup{hidelinks}
+\newfont{\niceHead}{eurb10 scaled 2000}
+
+\newfont{\niceHeadSmall}{eurb10 scaled 1500}
 
 \def\bull{\vrule height 0.8ex width .7ex depth -.1ex }
 % DEFINITIONS FOR RESUME
@@ -42,7 +52,7 @@
 
 \newcommand{\header}[1]{
 	\begin{changemargin}{-0.5in}{-0.5in}
-		\scshape{#1}\\
+		\scshape{\niceHeadSmall#1}\\
   	\lineover
 	\end{changemargin}
 }
@@ -50,8 +60,8 @@
 \newcommand{\PageHead}[2]{
 	\begin{changemargin}{-0.5in}{-0.5in}
 		\begin{center}
-			{\Large \scshape {#1}}\\ \smallskip
-			{\Large {#2}}
+			{\Large \scshape \niceHead {#1}}\\ \smallskip
+			{\Large \niceHead{#2}}
 		\end{center}
 	\end{changemargin}
 }
@@ -63,10 +73,15 @@
 	{\end{changemargin}
 }	
 
-\newcommand{\school}[4]{
-	\textbf{#1} \hfill \emph{#2\\}
-	#3\\ 
+\newcommand{\school}[5]{
+	\textbf{#1}
+	\ifnum#5=1
+		(Diploma behaald)
+	\fi
+	 \hfill \emph{#2\\}
+	\emph{#3},  
 	#4\\
+	\medskip
 }
 
 % END RESUME DEFINITIONS
@@ -74,7 +89,7 @@
 \begin{document}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Name
+% Name	
 \PageHead{Curriculum Vitae}{Erwin Oldenkamp}
 
 
@@ -84,21 +99,31 @@
 
 \begin{body}
 	\vspace{14pt}
-	\begin{tabular}{l l l}
-		Naam&:&Erwin Oldenkamp \\
-		Geslacht&:&Man  \\
-		Nationaliteit&:&Nederlandse \\
-		Geboortedatum&:&21-02-1991 \\
-		Geboorteplaats&:&Assen \\
-		Burgelijke staat&:&Ongehuwd \\
-		Adres&:&Kleine leliestraat 1 \\ 
-		& & 9712TD \\ 
-   		& & Groningen \\ 
-		Telefoonnummer & : & 0627481354 \\
-		Email &:&  \href{mailto:oldenkamperwin@gmail.com}{Oldenkamperwin@gmail.com}\\
-		LinkedIn & : & \href{http://www.linkedin.com/in/erwinoldenkamp}{www.linkedin.com/in/erwinoldenkamp} \\
-		Github & : & \href{http://www.github.com/Eernie}{www.github.com/Eernie} \\
-	\end{tabular}
+	\begin{minipage}{0.8\textwidth}
+		\begin{flushleft}
+			\begin{tabular}{l l l}
+				Naam			& : &Erwin Oldenkamp \\
+				Geslacht		& :	&Man  \\
+				Nationaliteit	& : & Nederlandse \\
+				Geboortedatum	& : & 21-02-1991 \\
+				Geboorteplaats	& : & Assen \\
+				Burgelijke staat& : & Ongehuwd \\
+				Adres 			& : & Kleine leliestraat 1 \\ 
+								&   & 9712TD \\ 
+		   						&   & Groningen \\ 
+				Telefoonnummer 	& : & 0627481354 \\
+				Email 			& : &  \href{mailto:oldenkamperwin@gmail.com}{Oldenkamperwin@gmail.com}\\
+				LinkedIn 		& : & \href{http://www.linkedin.com/in/erwinoldenkamp}{www.linkedin.com/in/erwinoldenkamp} \\
+				Github 			& : & \href{http://www.github.com/Eernie}{www.github.com/Eernie} \\
+			\end{tabular}
+		\end{flushleft}
+	\end{minipage}	
+	\begin{minipage}[c]{0.30\textwidth}
+		\begin{flushright}
+		\vspace{-.37in}
+			\includegraphics[width=1\textwidth,frame]{pasfoto}
+		\end{flushright}
+	\end{minipage}
 \end{body}
 
 \smallskip
@@ -109,9 +134,9 @@
 
 \begin{body}
 	\vspace{14pt}
-	\emph{\textbf{Programeren:}}{} PHP - (X)HTML - Jquery - CSS - Symfony - Java - Python - MySQL - Coffeescript - Django - Play Framework - PostgreSQL - MsSQL \\
+	\emph{\textbf{Programeren:}}PHP - (X)HTML - Jquery - CSS - Symfony - Java - Python - MySQL - Coffeescript - Django - Play Framework - PostgreSQL - MsSQL - Hibernate - LaTeX - REST - Objective C - iOS\\
 	\medskip
-	\emph{\textbf{Operating Systems:}}{} Windows, Linux, UNIX\\
+	\emph{\textbf{Operating Systems:}} Windows, Linux, OS X\\
 \end{body}
 
 \smallskip
@@ -120,17 +145,10 @@
 \header{Opleidingen}
 \begin{body}
 	\vspace{14pt}
-	\textbf{HBO Informatica}{} \hfill \emph{2010 - April 2013 }{} \\
-	\emph{Hanze hogeschool}, Groningen{} \\
-  \medskip
-	\textbf{MBO niveau 4 -- Applicatie Ontwikkelaar (Diploma behaald)} \hfill \emph{2009-2010} \\
-	\emph{Drenthe college}, Emmen{}\\
-  \medskip
-	\textbf{MBO niveau 3 -- Medewerker beheer ICT (Diploma behaald)} \hfill \emph{2007-2009} \\
-	\emph{Drenthe college}, Emmen{}\\
-  \medskip
-	\textbf{Kader ICT (Diploma behaald)} \hfill \emph{2003-2005} \\
-	\emph{Hondsrug college}, Emmen{}\\
+	\school{HBO Informatica}{2010 - heden}{Hanze hogeschool}{Groningen}{0}
+	\school{MBO niveau 4 -- Applicatie Ontwikkelaar}{2009-2010}{Drenthe college}{Emmen}{1}
+	\school{MBO niveau 3 -- Medewerker beheer ICT}{2007-2009}{Drenthe college}{Emmen}{1}
+	\school{Kader ICT}{2005-2007}{Hondsrug college}{Emmen}{1}
 \end{body}
 
 \smallskip
@@ -143,10 +161,18 @@
 
 \begin{body}
 	\vspace{14pt}
-	\textbf{Programmeur }, \emph{Learnit B.V.}, Groningen \hfill \emph{November 2011 -- heden}\\
+
+	\textbf{Software Developer}, \emph{Inversive Media}, Groningen \hfill \emph{juli 2013 -- augustus 2013}\\
 	\vspace*{-4pt}
 	\begin{itemize} \itemsep -0pt  % reduce space between items
-		\item Hier doe ik verschillend werk. Al het werk wat ik verricht heeft betrekking tot databases. Exports maken en mutaties regelen. Dit word voornamelijk gedaan in PHP en Python. Ook werk ik aan de website. Deze is volledig geschreven in python 
+		\item Na mijn stage hier ben ik verder gaan werken als vakantie baantje. Hier werkte ik aan de applicatie Tafelreserveren.nl. Er werd gebruik gemaakt van Play Framework en PostgreSQL.
+	\end{itemize}
+
+	\textbf{Programmeur }, \emph{Learnit B.V.}, Groningen \hfill \emph{November 2011 -- maart 2013}\\
+	\vspace*{-4pt}
+	\begin{itemize} \itemsep -0pt  % reduce space between items
+		\item Hier deed ik verschillend werk. Al het werk wat ik verrichte heeft betrekking tot databases. Exports maken en mutaties regelen. Dit wordt voornamelijk gedaan in PHP en Python. 
+		\item Ook werkte ik aan de website. Deze is volledig geschreven in python 
 	\end{itemize}
 
 	\textbf {Webdeveloper }, \emph{SquidMedia}, Winsum  \hfill \emph{Mei 2011 -- november 2011 }\\
@@ -155,7 +181,7 @@
 		\item Hier zat ik in een team van drie man. Hier heb ik gewerkt aan Joomla websites en aan websites gemaakt in hun eigen content management system, DCT.
 	\end{itemize}
 
-	\textbf {Technische dienst}, \emph{Gameshop Play-It}, Stadskanaal   \hfill \emph{Januari 2011- Mei 2011  }\\
+	\textbf {Technische dienst}, \emph{Gameshop Play-It}, Stadskanaal   \hfill \emph{Januari 2011- mei 2011  }\\
 	\vspace*{-4pt}
 	\begin{itemize} \itemsep -0pt
 		\item Ik heb hier in de technische dienst gewerkt. Ik repareerde game consoles en maakte software voor het bedrijf zelf.
@@ -170,7 +196,7 @@
 
 \smallskip
 
-\newpage{} % uncomment this line if you want to force a new page
+\newpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Interns
@@ -178,7 +204,15 @@
 
 \begin{body}
 	\vspace{14pt}
-	\textbf{Software Developer}, \emph{Inversive Media}, Groningen \hfill \emph{Februarie 2013 -- heden}\\
+
+	\textbf{Software Engineer}, \emph{Topicus Finan}, Zwolle \hfill \emph{September 2013 -- heden}\\
+	\vspace*{-4pt}
+	\begin{itemize} \itemsep -0pt  % reduce space between items
+		\item Voor mijn afstudeer opdracht ben ik een applicatie aan het ontwikkelen voor de iPad. Deze applicatie presenteert strategische management informatie.
+		\item Voor de communicatie heb ik ook een REST API ontwikkeld.
+	\end{itemize}
+
+	\textbf{Software Developer}, \emph{Inversive Media}, Groningen \hfill \emph{Februarie 2013 -- juli 2013}\\
 	\vspace*{-4pt}
 	\begin{itemize} \itemsep -0pt  % reduce space between items
 		\item Voor mijn stage opdracht heb ben ik een API aan het ontwikkelen voor adres gegevens. Deze API word data gevoerd van het BAG.
@@ -204,7 +238,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % hobby's
-\header{Hobby / Vrije tijd}
+\header{Hobby en Vrije tijd}
 
 \begin{body}
 	\vspace{14pt}
