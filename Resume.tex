@@ -1,260 +1,212 @@
-\documentclass[9pt]{article}
-\usepackage{fullpage}
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage[usenames]{color}
-\usepackage{hyperref}
-\usepackage{wrapfig}
-\usepackage{graphicx}
-\usepackage{float} 
-\usepackage[export]{adjustbox}
-\usepackage{titlesec}
-\usepackage{titling}
-\usepackage{fontspec}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Deedy - One Page Two Column Resume
+% LaTeX Template
+% Version 1.1 (30/4/2014)
+%
+% Original author:
+% Debarghya Das (http://debarghyadas.com)
+%
+% Original repository:
+% https://github.com/deedydas/Deedy-Resume
+%
+% IMPORTANT: THIS TEMPLATE NEEDS TO BE COMPILED WITH XeLaTeX
+%
+% This template uses several fonts not included with Windows/Linux by
+% default. If you get compilation errors saying a font is missing, find the line
+% on which the font is used and either change it to a font included with your
+% operating system or comment the line out to use the default font.
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+% TODO:
+% 1. Integrate biber/bibtex for article citation under publications.
+% 2. Figure out a smoother way for the document to flow onto the next page.
+% 3. Add styling information for a "Projects/Hacks" section.
+% 4. Add location/address information
+% 5. Merge OpenFont and MacFonts as a single sty with options.
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% CHANGELOG:
+% v1.1:
+% 1. Fixed several compilation bugs with \renewcommand
+% 2. Got Open-source fonts (Windows/Linux support)
+% 3. Added Last Updated
+% 4. Move Title styling into .sty
+% 5. Commented .sty file.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Known Issues:
+% 1. Overflows onto second page if any column's contents are more than the
+% vertical limit
+% 2. Hacky space on the first bullet point on the second column.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\leftmargin=0.25in
-\oddsidemargin=0.25in
-\textwidth=6.0in
-\topmargin=-0.25in
-\textheight=9.25in
+\documentclass[]{deedy-resume-openfont}
 
-\raggedright
-
-\pagenumbering{arabic}
-
-\hypersetup{hidelinks}
-\newfont{\niceHead}{eurb10 scaled 2000}
-
-\newfont{\niceHeadSmall}{eurb10 scaled 1500}
-
-\def\bull{\vrule height 0.8ex width .7ex depth -.1ex }
-% DEFINITIONS FOR RESUME
-
-\newenvironment{changemargin}[2]{%
-  \begin{list}{}{%
-    \setlength{\topsep}{0pt}%
-    \setlength{\leftmargin}{#1}%
-    \setlength{\rightmargin}{#2}%
-    \setlength{\listparindent}{\parindent}%
-    \setlength{\itemindent}{\parindent}%
-    \setlength{\parsep}{\parskip}%
-  }%
-  \item[]}{\end{list}
-}
-
-\newcommand{\lineover}{
-	\begin{changemargin}{-0.05in}{-0.05in}
-		\vspace*{-8pt}
-		\hrulefill \\
-		\vspace*{-2pt}
-	\end{changemargin}
-}
-
-\newcommand{\header}[1]{
-	\begin{changemargin}{-0.5in}{-0.5in}
-		\scshape{\niceHeadSmall#1}\\
-  	\lineover
-	\end{changemargin}
-}
-
-\newcommand{\PageHead}[2]{
-	\begin{changemargin}{-0.5in}{-0.5in}
-		\begin{center}
-			{\Large \scshape \niceHead {#1}}\\ \smallskip
-			{\Large \niceHead{#2}}
-		\end{center}
-	\end{changemargin}
-}
-
-\newenvironment{body} {
-	\vspace*{-16pt}
-	\begin{changemargin}{-0.25in}{-0.5in}
-  }	
-	{\end{changemargin}
-}	
-
-\newcommand{\school}[5]{
-	\textbf{#1}
-	\ifnum#5=1
-		(Diploma behaald)
-	\fi
-	 \hfill \emph{#2\\}
-	\emph{#3},  
-	#4\\
-	\medskip
-}
-
-% END RESUME DEFINITIONS
 
 \begin{document}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Name	
-\PageHead{Curriculum Vitae}{Erwin Oldenkamp}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     TITLE NAME
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Objective
-\header{Contact}
+\namesection{Erwin}{Oldenkamp}{ \urlstyle{same}\url{http://www.eernie.nl} \\
+\href{mailto:oldenkamperwin@gmail.com}{oldenkamperwin@gmail.com} | 0627481354
+}
 
-\begin{body}
-	\vspace{14pt}
-	\begin{minipage}{0.8\textwidth}
-		\begin{flushleft}
-			\begin{tabular}{l l l}
-				Naam			& : &Erwin Oldenkamp \\
-				Geslacht		& :	&Man  \\
-				Nationaliteit	& : & Nederlandse \\
-				Geboortedatum	& : & 21-02-1991 \\
-				Geboorteplaats	& : & Assen \\
-				Burgelijke staat& : & Ongehuwd \\
-				Adres 			& : & Kleine leliestraat 1 \\ 
-								&   & 9712TD \\ 
-		   						&   & Groningen \\ 
-				Telefoonnummer 	& : & 0627481354 \\
-				Email 			& : &  \href{mailto:oldenkamperwin@gmail.com}{Oldenkamperwin@gmail.com}\\
-				LinkedIn 		& : & \href{http://www.linkedin.com/in/erwinoldenkamp}{www.linkedin.com/in/erwinoldenkamp} \\
-				Github 			& : & \href{http://www.github.com/Eernie}{www.github.com/Eernie} \\
-			\end{tabular}
-		\end{flushleft}
-	\end{minipage}	
-	\begin{minipage}[c]{0.30\textwidth}
-		\begin{flushright}
-		\vspace{-.37in}
-			\includegraphics[width=1\textwidth,frame]{pasfoto}
-		\end{flushright}
-	\end{minipage}
-\end{body}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     COLUMN ONE
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\smallskip
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Skills
-\header{Pakketkennis}
-
-\begin{body}
-	\vspace{14pt}
-	\emph{\textbf{Programeren:}}PHP - (X)HTML - Jquery - CSS - Symfony - Java - Python - MySQL - Coffeescript - Django - Play Framework - PostgreSQL - MsSQL - Hibernate - LaTeX - REST - Objective C - iOS\\
-	\medskip
-	\emph{\textbf{Operating Systems:}} Windows, Linux, OS X\\
-\end{body}
-
-\smallskip
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Education
-\header{Opleidingen}
-\begin{body}
-	\vspace{14pt}
-	\school{HBO Informatica}{2010 - heden}{Hanze hogeschool}{Groningen}{0}
-	\school{MBO niveau 4 -- Applicatie Ontwikkelaar}{2009-2010}{Drenthe college}{Emmen}{1}
-	\school{MBO niveau 3 -- Medewerker beheer ICT}{2007-2009}{Drenthe college}{Emmen}{1}
-	\school{Kader ICT}{2005-2007}{Hondsrug college}{Emmen}{1}
-\end{body}
-
-\smallskip
+\begin{minipage}[t]{0.33\textwidth} 	
+	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     Certficates
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Experience
-\header{Werkervaring}
-
-\begin{body}
-	\vspace{14pt}
-
-	\textbf{Software Developer}, \emph{Inversive Media}, Groningen \hfill \emph{juli 2013 -- augustus 2013}\\
-	\vspace*{-4pt}
-	\begin{itemize} \itemsep -0pt  % reduce space between items
-		\item Na mijn stage hier ben ik verder gaan werken als vakantie baantje. Hier werkte ik aan de applicatie Tafelreserveren.nl. Er werd gebruik gemaakt van Play Framework en PostgreSQL.
-	\end{itemize}
-
-	\textbf{Programmeur }, \emph{Learnit B.V.}, Groningen \hfill \emph{November 2011 -- maart 2013}\\
-	\vspace*{-4pt}
-	\begin{itemize} \itemsep -0pt  % reduce space between items
-		\item Hier deed ik verschillend werk. Al het werk wat ik verrichte heeft betrekking tot databases. Exports maken en mutaties regelen. Dit wordt voornamelijk gedaan in PHP en Python. 
-		\item Ook werkte ik aan de website. Deze is volledig geschreven in python 
-	\end{itemize}
-
-	\textbf {Webdeveloper }, \emph{SquidMedia}, Winsum  \hfill \emph{Mei 2011 -- november 2011 }\\
-	\vspace*{-4pt}
-	\begin{itemize} \itemsep -0pt
-		\item Hier zat ik in een team van drie man. Hier heb ik gewerkt aan Joomla websites en aan websites gemaakt in hun eigen content management system, DCT.
-	\end{itemize}
-
-	\textbf {Technische dienst}, \emph{Gameshop Play-It}, Stadskanaal   \hfill \emph{Januari 2011- mei 2011  }\\
-	\vspace*{-4pt}
-	\begin{itemize} \itemsep -0pt
-		\item Ik heb hier in de technische dienst gewerkt. Ik repareerde game consoles en maakte software voor het bedrijf zelf.
-	\end{itemize}
-
-	\textbf {Vulploegleider}, \emph{Plus Sandur}, Emmen  \hfill \emph{Augustus 2009-2010}\\
-	\vspace*{-4pt}
-	\begin{itemize} \itemsep -0pt
-		\item Ik moest er voor zorgen dat de vulploeg een goeie vulnorm had. Hier was ik dan ook het aanspreekpunt van de vulploeg.
-	\end{itemize}
-\end{body}
-
-\smallskip
-
-\newpage
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Interns
-\header{Stage}
-
-\begin{body}
-	\vspace{14pt}
-
-	\textbf{Software Engineer}, \emph{Topicus Finan}, Zwolle \hfill \emph{September 2013 -- heden}\\
-	\vspace*{-4pt}
-	\begin{itemize} \itemsep -0pt  % reduce space between items
-		\item Voor mijn afstudeer opdracht ben ik een applicatie aan het ontwikkelen voor de iPad. Deze applicatie presenteert strategische management informatie.
-		\item Voor de communicatie heb ik ook een REST API ontwikkeld.
-	\end{itemize}
-
-	\textbf{Software Developer}, \emph{Inversive Media}, Groningen \hfill \emph{Februarie 2013 -- juli 2013}\\
-	\vspace*{-4pt}
-	\begin{itemize} \itemsep -0pt  % reduce space between items
-		\item Voor mijn stage opdracht heb ben ik een API aan het ontwikkelen voor adres gegevens. Deze API word data gevoerd van het BAG.
-		\item Ook werk ik hier aan de website Tafelreserveren.nl. Geschreven in het Playframework.
-	\end{itemize}
-
-	\textbf {Applicatieontwikkelaar}, \emph{aXtion}, Emmen \hfill \emph{Februarie 2010 -- juni 2010}\\
-	\vspace*{-4pt}
-	\begin{itemize} \itemsep -0pt
-		\item Hier heb ik stage gelopen voor  een half jaar. Ik heb hier veel gewerkt in PHP en het Symfony framework. Ik heb hier geleerd om in teamverband aan een project te werken.
-	\end{itemize}
-
-	\textbf {Medewerker Automatisering}, \emph{Gemeentehuis}, Coevorden \hfill \emph{Februarie 2010 -- juni 2010}\\
-	\vspace*{-4pt}
-	\begin{itemize} \itemsep -0pt
-		\item Hier voerde ik vooral systeembeheer taken uit, computers vervangen en repareren.  
-	\end{itemize}
-\end{body}
-
-\smallskip
-
-% \newpage{} % uncomment this line if you want to force a new page
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% hobby's
-\header{Hobby en Vrije tijd}
-
-\begin{body}
-	\vspace{14pt}
-	\begin{itemize} \itemsep -0pt  % reduce space between items
-		\item Drummen
-		\item Muziek
-		\item Applicaties bouwen
-	\end{itemize}
-
-\end{body}
-
-\smallskip
-
-% \newpage{} % uncomment this line if you want to force a new page
-
-\smallskip
+\section{Certificates}
+\descript{Java SE 7 Programmer I | 2015}
+\sectionsep
 
 
-\end{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     SKILLS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Skills}
+\subsection{Programming}
+Java \textbullet{}   HTML \textbullet{} Jquery \textbullet{} CSS \\
+Python \textbullet{} Django \textbullet{} MySQL \\ 
+Coffeescript \textbullet{} \LaTeX\ \textbullet{} Hibernate\\ 
+REST \textbullet{} ObjectiveC \textbullet{} IOS \\ 
+Git \textbullet{} Jira \textbullet{} Stash \textbullet{} Confluence
+\sectionsep
+
+\subsection{Operating systems}
+Windows \textbullet{} Linux \textbullet{} OS X 
+\sectionsep
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     HOBBIES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Hobbies}
+\custombold{Fitness}\\
+\custombold{Drumming}\\
+\custombold{Music}\\
+\custombold{Opensource projects}\\
+\sectionsep
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     LINKS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Links} 
+Github:// \href{https://github.com/eernie}{\custombold{eernie}} \\
+StackOverflow:// \href{http://stackoverflow.com/users/1956445/eernie}{\custombold{eernie}}\\
+LinkedIn://  \href{https://www.linkedin.com/in/erwinoldenkamp}{\custombold{erwinoldenkamp}}
+\sectionsep
+
+\section*{}
+\vspace{-0.3in}
+\includegraphics[width=.8\textwidth]{pasfoto}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     COLUMN TWO
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{minipage} 
+\hfill
+\begin{minipage}[t]{0.66\textwidth} 
+	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     EDUCATION
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Education} 
+
+\runsubsection{Hanze hogeschool}\\
+\descript{BS in Computer Science}
+\location{Spec. in Software Engineering}
+Graduated February 2014
+Groningen, Netherlands
+\sectionsep
+
+\runsubsection{Drenthe College}\\
+\descript{Intermediate vocational education in software developing}
+Graduated July 2010 Emmen, Netherlands
+\sectionsep
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     EXPERIENCE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Experience}
+
+\runsubsection{Topicus Finan B.V.}
+\descript{| Software Engineer }
+\location{February 2014 - present | Zwolle, Netherlands}
+In a team of 10 people we work on an application that processes payment messages. 
+The application is written in JavaEE. 
+We use scrum to plan and prioritise the work items.
+\sectionsep
+
+\runsubsection{Inversive Media}
+\descript{| Software Developer }
+\location{Juli 2013 - August 2013 | Groningen, Netherlands}
+After my internship I stayed at Inversive Media for a few months untill I would start the Internship at Topicus Finan.
+I worked on the application 'Tafelreserveren.nl'. It is written Java with Play Framework and PostgreSQL.
+\sectionsep
+
+\runsubsection{Learnit B.V.}
+\descript{| Programmer}
+\location{January 2011 – March 2013 | Groningen, Netherlands}
+My work here was diverse. 
+Most of the work was related to the database, like creating exports and create queries to do mutations.
+The mutations were mostly because of problems in the applications.
+I worked on the frontend, it was written in Python.
+\sectionsep
+
+\runsubsection{SquidMedia}
+\descript{| Webdeveloper}
+\location{May 2011 – November 2011 | Winsum, Netherlands}
+I worked in a small team.
+Most sites were written in Joomla or Squidmedia's own content management system, called DCT.
+\sectionsep
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     Internships
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Internships}
+\runsubsection{Topicus Finan B.V.}
+\descript{| Software Engineer }
+\location{September 2013 – February 2014 | Zwolle, Netherlands}
+For my graduation project I made an IOS application for iPads. 
+This application show the strategic management information. 
+I wrote the REST backend in Java and with the Play Framework.
+\sectionsep
+
+\runsubsection{Inversive Media}
+\descript{| Software Developer }
+\location{February 2013 – July 2013 | Groningen, Netherlands}
+Inversive Media bought address data from 'Basisregistraties Adressen en Gebouwen'.
+This was a dataset of 16GB and they wanted it transformed in to a service.
+I created an import script that imported the 16GB of data in to a ElasticSearch server.
+After this I wrote a REST service to query the addresses in multiple ways.
+\sectionsep
+
+
+\end{minipage} 
+\end{document}  \documentclass[]{article}
