@@ -17,6 +17,7 @@
 \usepackage[UKenglish]{babel}
 \usepackage[UKenglish]{isodate}
 \usepackage{fontspec,xltxtra,xunicode}
+\usepackage{progressbar}
 
 % Color definitions
 \definecolor{date}{HTML}{666666} 
@@ -73,3 +74,5 @@
 
 % Bullet Lists with fewer gaps command
 \newenvironment{tightemize}{\vspace{-\topsep}\begin{itemize}\itemsep1pt \parskip0pt \parsep0pt}{\end{itemize}\vspace{-\topsep}}
+
+\newcommand{\progress}[1]{\progressbar[roundnessa=0cm,ticksheight=0,width=10em]{#1}}
